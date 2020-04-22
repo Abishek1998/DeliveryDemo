@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class DeliveryData extends AppCompatActivity {
 
-    TextView door,address,city,contact;
+    TextView door1,address1,city1,contact1;
     Button select,edit,delete,add;
 
     @Override
@@ -18,14 +18,14 @@ public class DeliveryData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery_data);
 
-        door = findViewById(R.id.door);
-        address = findViewById(R.id.address);
-        city = findViewById(R.id.city);
-        contact = findViewById(R.id.contact);
+        door1 = findViewById(R.id.door1);
+        address1 = findViewById(R.id.address1);
+        city1 = findViewById(R.id.city1);
+        contact1 = findViewById(R.id.contact1);
 
-        select = findViewById(R.id.select);
-        edit = findViewById(R.id.edit);
-        delete = findViewById(R.id.delete);
+        select = findViewById(R.id.select1);
+        edit = findViewById(R.id.edit1);
+        delete = findViewById(R.id.delete1);
         add = findViewById(R.id.add);
 
         select.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +43,12 @@ public class DeliveryData extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+       door1.setText(getIntent().getStringExtra("Door"));
+       address1.setText(getIntent().getStringExtra("Address"));
+       city1.setText(getIntent().getStringExtra("City"));
+       contact1.setText(getIntent().getStringExtra("Contact"));
+
 
     }
 }
